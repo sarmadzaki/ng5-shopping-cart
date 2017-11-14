@@ -1,30 +1,18 @@
-
-  <div>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+<div *ngFor="let d of data" class="cards">
+  <h4 class="pull-right">
+    <b>
+      Price:
+    </b>
+    {{d.price}}
+  </h4>
+  <div class="card" style="width: 20rem;">
+    <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{d.name}}</h4>
+      <p class="card-text">{{d.description}}</p>
+      <button class="btn btn-block btn-primary" (click)="addCart(d.id, d.price)">
+        Add To Cart
+      </button>
     </div>
   </div>
-  <div>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div><div>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
+</div>
