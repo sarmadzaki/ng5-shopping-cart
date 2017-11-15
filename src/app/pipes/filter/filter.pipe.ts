@@ -10,7 +10,6 @@ export class FilterPipe implements PipeTransform {
     if (!args) return value;
     args = args.toLowerCase();
     return value.filter(it => {
-      // console.log(it.name)
       return it.name.toLowerCase().includes(args);
     });
   }

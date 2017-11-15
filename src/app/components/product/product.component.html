@@ -1,18 +1,22 @@
 <div>
-  <div class="row">
+  <div>
     <div class="col-md-10 col-md-offset-2">
       <form #form="ngForm" class="search-form">
         <div class="form-group has-feedback">
-          <label  for="search" class="sr-only">Search</label>
-          <input [(ngModel)]="searchText" (change)="onSearch()"  type="text" class="form-control" name="search" id="search" placeholder="search" ngModel>
+          <label for="search" class="sr-only">Search</label>
+          <input [(ngModel)]="searchText" (change)="onSearch()" type="text" class="form-control" name="search" id="search" placeholder="search"
+            ngModel>
           <span class="glyphicon glyphicon-search form-control-feedback"></span>
         </div>
       </form>
     </div>
+    <div class=" col-md-12  col-md-offset-10">
+      <button class="btn btn-primary" (click)="sorting()"><i class="glyphicon glyphicon-chevron-up"></i></button>
+      <button class="btn" (click)="sorting()"><i class="glyphicon glyphicon-chevron-down"></i></button>
+    </div>
   </div>
-  <!-- <button (click)="sorting()"> ac</button>
-  <button (click)="sorting()"> dc</button> -->
-  <div *ngFor="let d of data | filter : searchText" class="cards">
+
+  <div *ngFor="let d of data | sort : isSort |filter : searchText" class="cards">
     <h4 class="pull-right">
       <b>
         Price:
