@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor() { console.log('checkout component') }
 
   ngOnInit() {
   }

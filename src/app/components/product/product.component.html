@@ -1,18 +1,34 @@
-<div *ngFor="let d of data" class="cards">
-  <h4 class="pull-right">
-    <b>
-      Price:
-    </b>
-    {{d.price}}
-  </h4>
-  <div class="card" style="width: 20rem;">
-    <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">{{d.name}}</h4>
-      <p class="card-text">{{d.description}}</p>
-      <button class="btn btn-block btn-primary" (click)="addCart(d.id, d.price)">
-        Add To Cart
-      </button>
+<div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <form #form="ngForm" class="search-form">
+        <div class="form-group has-feedback">
+          <label  for="search" class="sr-only">Search</label>
+          <input [(ngModel)]="searchText" (change)="onSearch()"  type="text" class="form-control" name="search" id="search" placeholder="search" ngModel>
+          <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
     </div>
   </div>
+  <!-- <button (click)="sorting()"> ac</button>
+  <button (click)="sorting()"> dc</button> -->
+  <div *ngFor="let d of data | filter : searchText" class="cards">
+    <h4 class="pull-right">
+      <b>
+        Price:
+      </b>
+      {{d.price}}
+    </h4>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{d.name}}</h4>
+        <p class="card-text">{{d.description}}</p>
+        <button class="btn btn-block btn-primary" (click)="addCart(d.id, d.price)">
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
 </div>

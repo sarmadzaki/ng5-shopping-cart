@@ -1,3 +1,9 @@
 div {
     text-align: center
 }
+ul>li {
+    list-style-type: none;
+}
+.abc{
+    background-color: blue;
+}

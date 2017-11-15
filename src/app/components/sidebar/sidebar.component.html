@@ -4,19 +4,20 @@
   </h2>
   <ul>
     <li>
-     <b>
-       Items Selected:
-      </b> 
+      <b>
+        Items Selected:
+      </b>
       {{totalItems}}
     </li>
     <li>
-     <b>
-       Total Amount:
-      </b> 
+      <b>
+        Total Amount:
+      </b>
       {{totalPrice}}
     </li>
   </ul>
-  <button class="btn btn-info btn-block">
+
+  <button routerLink="/checkout" *ngIf="isEnabled" class="btn btn-info btn-block">
     Proceed To Checkout
   </button>
 </div>
