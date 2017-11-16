@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../services/cartService/cart.service'
 import { RouterLink, Router } from '@angular/router'
 @Component({
@@ -10,6 +10,7 @@ export class SidebarComponent implements OnInit {
   totalItems: any = 0;
   totalPrice: any = 0;
   isEnabled: boolean = false;
+  masterName = 1201;
   constructor(public cart: CartService, public router: Router) {
     this.cart.items.subscribe(res => {
       this.totalItems = this.totalItems + res.item;
@@ -21,6 +22,11 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit() {
   }
+  route() {
+    console.log(this.masterName)
+    this.router.navigate(['/checkout']);
+  }
+
   proceedToCheckout() {
     if (this.totalItems !== 0) {
       this.isEnabled = true;
