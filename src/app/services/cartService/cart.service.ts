@@ -4,7 +4,7 @@ import { CartItems } from '../../models/cart-items'
 @Injectable()
 export class CartService {
   itemsCount: number;
-  price;
+  price: number;
   items = new BehaviorSubject<any>({ item: 0, price: 0 });
   /*  totalPrice = new BehaviorSubject<number>(0);
    selectCount = new BehaviorSubject<number>(0); */
