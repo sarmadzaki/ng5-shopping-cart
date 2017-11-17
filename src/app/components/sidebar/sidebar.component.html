@@ -18,7 +18,8 @@
     </li>
   </ul>
 
-  <button *ngIf="isEnabled" class="btn btn-info btn-block" (click)="route()">
+  <button routerLink="/checkout" *ngIf="isEnabled" class="btn btn-info btn-block" >
     Proceed To Checkout
+  
   </button>
 </div>

@@ -14,9 +14,11 @@ export class CheckoutComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public cart: CartService
-  ) { }
+  ) { 
+  }
   ngOnInit() {
     console.log('masterName', this.masterName);
   }
-}
+  
+  }
 

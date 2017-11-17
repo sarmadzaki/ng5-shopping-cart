@@ -18,20 +18,17 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.product.getData().subscribe(data => {
       this.data = data;
-      console.log(this.data)
-    })
+    });
   }
 
   addCart(index, price) {
     this.cart.addToCart(index, price);
   }
   onSearch(value) {
-    console.log('instance', value)
+    console.log('instance', value);
   }
- sorting() {
-   this.isSort = !this.isSort;
- }
- search() {
-   this.isSearch = !this.isSearch;
- }
+  sorting() {
+    this.isSort = !this.isSort;
+  }
+
 }
