@@ -2,9 +2,8 @@
   <div>
     <div class="col-md-10 col-md-offset-2">
       <form #form="ngForm" class="search-form">
-        <div class="form-group has-feedback">
-          <label for="search" class="sr-only">Search</label>
-          <input [(ngModel)]="searchText" (change)="onSearch()" type="text" class="form-control" name="search" id="search" placeholder="search"
+        <div class="form-group has-feedback ">
+          <input autocomplete="off" [(ngModel)]="searchText" (change)="onSearch()" type="text" class="form-control pull-right" name="search" id="search" placeholder="Type Products Name"
             ngModel>
           <span class="glyphicon glyphicon-search form-control-feedback"></span>
         </div>

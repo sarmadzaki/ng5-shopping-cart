@@ -18,21 +18,14 @@ import { HomeComponent } from './components/home/home.component'
 import { NgForm, FormsModule } from '@angular/forms';
 import { SortPipe } from './pipes/sort/sort.pipe';
 import { FilterPipe } from './pipes/filter/filter.pipe';
-
+import { RegisterComponent } from './components/register/register/register.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { appRoutes } from 'app/routes';
+import {AuthService} from './services/auth/auth.service'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'checkout',
-    component: CheckoutComponent
-  }
 
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +38,8 @@ const appRoutes: Routes = [
     HomeComponent,
     SortPipe,
     FilterPipe,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -59,7 +54,7 @@ const appRoutes: Routes = [
       }
     })
   ],
-  providers: [ProductService, HttpClientModule, CartService],
+  providers: [ProductService, HttpClientModule, CartService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/productService/product.service';
 import { CartService } from '../../services/cartService/cart.service'
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -20,7 +19,6 @@ export class ProductComponent implements OnInit {
       this.data = data;
     });
   }
-
   addCart(index, price) {
     this.cart.addToCart(index, price);
   }

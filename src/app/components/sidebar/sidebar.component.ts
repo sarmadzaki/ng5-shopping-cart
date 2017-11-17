@@ -11,20 +11,21 @@ export class SidebarComponent implements OnInit {
   totalPrice: any = 0;
   isEnabled: boolean = false;
   masterName = 1201;
-  constructor(public cart: CartService, public router: Router) {
+  constructor(public cart: CartService, public router: Router) { }
+
+  ngOnInit() {
     this.cart.items.subscribe(res => {
       this.totalItems = this.totalItems + res.item;
       this.totalPrice = this.totalPrice + res.price;
       this.proceedToCheckout();
     })
-    /* this.cart.selectCount.subscribe(res => this.itemsSelected = res);
-    this.cart.totalPrice.subscribe(res => {this.price = res}); */
-  }
-  ngOnInit() {
   }
   route() {
-    console.log(this.masterName)
+    console.log(this.totalItems, this.totalPrice)
+    this.cart.checkout = {items: this.totalItems, price: this.totalPrice}
     this.router.navigate(['/checkout']);
+    
+
   }
 
   proceedToCheckout() {

@@ -1,6 +1,5 @@
 
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cartService/cart.service'
 @Component({
   selector: 'app-checkout',
@@ -8,17 +7,16 @@ import { CartService } from '../../services/cartService/cart.service'
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  itemsCount: number = 0;
-  priceCount: number = 0;
-  @Input('masterName') masterName: any;
+  itemsCount: number;
+  priceCount: number;
   constructor(
-    public route: ActivatedRoute,
     public cart: CartService
-  ) { 
+  ) {
   }
   ngOnInit() {
-    console.log('masterName', this.masterName);
+    this.itemsCount = this.cart.checkout.items;
+    this.priceCount = this.cart.checkout.price;
   }
-  
-  }
+
+}
 
