@@ -6,14 +6,14 @@
 <section id="login">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-md-12">
         <div class="form-wrap">
           <h1>Register With Email</h1>
           <form #user="ngForm" id="login-form" (ngSubmit)="register(user)" autocomplete="off">
             <div class="form-group">
               <label for="email" class="sr-only">Email</label>
               <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" #email="ngModel" ngModel
-                required>
+                required validate>
             </div>
             <div class="form-group">
               <label for="key" class="sr-only">Password</label>

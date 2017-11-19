@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../services/auth/auth.service'
+import { AuthService } from '../../../services/auth/auth.service';
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,13 +8,17 @@ import { AuthService } from '../../../services/auth/auth.service'
 })
 export class RegisterComponent implements OnInit {
 isValid: boolean = false;
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public route: Router) { }
 
   ngOnInit() {
   }
   register(user) {
+    // console.log(user)
+    if(!this.auth.ValidateEmail(user)) return this.isValid = true;
     if(!user.valid) return this.isValid = !this.isValid;
     this.isValid = !this.isValid;
     this.auth.register(user.value);
+    this.route.navigate(['/login']);
   }
+ 
 }
