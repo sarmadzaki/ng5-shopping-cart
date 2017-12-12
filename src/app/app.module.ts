@@ -23,6 +23,7 @@ import { RegisterComponent } from './components/register/register/register.compo
 import { LoginComponent } from './components/login/login/login.component';
 import { appRoutes } from 'app/routes';
 import { AuthService } from './services/auth/auth.service';
+import { DetailsComponent } from './components/details/details.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FilterPipe,
     RegisterComponent,
     LoginComponent,
+    DetailsComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
