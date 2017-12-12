@@ -1,44 +1,44 @@
 <div class="alert alert-danger" role="alert" *ngIf="isValid">
-    <strong>
-      <i class="glyphicon glyphicon-exclamation-sign"></i> Error</strong>
-    <br> Incomplete Email Or Password
-  </div>
-  <section id="login">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-wrap">
-            <h1>Login With Email & Password</h1>
-            <form #user="ngForm" id="login-form" (ngSubmit)="login(user)" autocomplete="off">
-              <div class="form-group">
-                <label for="email" class="sr-only">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" #email="ngModel" ngModel
-                  required>
-              </div>
-              <div class="form-group">
-                <label for="key" class="sr-only">Password</label>
-                <input type="password" name="password" id="key" class="form-control" placeholder="Password" #password="ngModel" ngModel required>
-              </div>
-              <!-- <div class="checkbox">
+  <strong>
+    <i class="glyphicon glyphicon-exclamation-sign"></i> Error</strong>
+  <br> Incomplete Email Or Password
+</div>
+<section id="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-wrap">
+          <h1>Login With Email & Password</h1>
+          <form #user="ngForm" id="login-form" (ngSubmit)="login(user)" autocomplete="off">
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com" #email="ngModel" ngModel
+                required>
+            </div>
+            <div class="form-group">
+              <label for="key" class="sr-only">Password</label>
+              <input type="password" name="password" id="key" class="form-control" placeholder="Password" #password="ngModel" ngModel required>
+            </div>
+            <!-- <div class="checkbox">
                               <span class="character-checkbox" onclick="showPassword()"></span>
                               <span class="label">Show password</span>
                           </div> -->
-              <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Login">
-            </form>
-            <h2 style="text-align: center; color: #1fa67b">OR</h2>
-            <button routerLink="/register" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Login">Register</button>
-  
-            <!-- <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a> -->
-          </div>
+            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Login">
+          </form>
+          <h2 style="text-align: center; color: #1fa67b">OR</h2>
+          <button routerLink="/register" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Login">Register</button>
+
+          <!-- <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a> -->
         </div>
-        <!-- /.col-xs-12 -->
       </div>
-      <!-- /.row -->
+      <!-- /.col-xs-12 -->
     </div>
-    <!-- /.container -->
-  </section>
-  
-  <!-- <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
+
+<!-- <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -59,9 +59,9 @@
       </div>
     </div>
   </div> -->
-  <!-- /.modal -->
-  
-  <!-- <footer id="footer">
+<!-- /.modal -->
+
+<!-- <footer id="footer">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">

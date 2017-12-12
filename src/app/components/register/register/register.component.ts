@@ -9,18 +9,18 @@ import { HelperService } from '../../../services/helpers/helper.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-isValid: boolean = false;
+  isValid: boolean = false;
   constructor(public auth: AuthService, public route: Router, public helper: HelperService) { }
 
   ngOnInit() {
   }
   register(user) {
     // console.log(user)
-    if(!this.auth.ValidateEmail(user)) return this.isValid = true;
-    if(!user.valid) return this.isValid = !this.isValid;
+    if (!this.auth.ValidateEmail(user)) return this.isValid = true;
+    if (!user.valid) return this.isValid = !this.isValid;
     this.isValid = !this.isValid;
     this.auth.register(user.value);
     this.route.navigate(['/login']);
   }
- 
+
 }
