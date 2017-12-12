@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { Router } from '@angular/router'
+import { HelperService } from '../../../services/helpers/helper.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router'
 })
 export class RegisterComponent implements OnInit {
 isValid: boolean = false;
-  constructor(public auth: AuthService, public route: Router) { }
+  constructor(public auth: AuthService, public route: Router, public helper: HelperService) { }
 
   ngOnInit() {
   }

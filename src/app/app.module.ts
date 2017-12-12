@@ -13,6 +13,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductService } from './services/productService/product.service'
 import { CartService } from './services/cartService/cart.service';
+import { HelperService } from './services/helpers/helper.service'
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component'
 import { NgForm, FormsModule } from '@angular/forms';
@@ -21,7 +22,8 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
 import { RegisterComponent } from './components/register/register/register.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { appRoutes } from 'app/routes';
-import {AuthService} from './services/auth/auth.service'
+import { AuthService } from './services/auth/auth.service';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -54,7 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ProductService, HttpClientModule, CartService, AuthService],
+  providers: [ProductService, HttpClientModule, CartService, AuthService, HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

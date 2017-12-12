@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../services/auth/auth.service'
+import { Router } from '@angular/router'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,13 +9,17 @@ import {AuthService} from '../../../services/auth/auth.service'
 })
 export class LoginComponent implements OnInit {
   isValid: boolean = false;
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public route: Router) { }
 
   ngOnInit() {
   }
   login(user) {
-    if(!user.valid) return this.isValid = !this.isValid;
-    this.isValid = !this.isValid;
-    this.auth.login(user.value);
+    this.auth.login(user);
+    if(this.auth.isValid) {
+      this.route.navigate(['']);
+    } else {
+      this.isValid = true;
+    }
+
   }
 }
