@@ -1,6 +1,6 @@
 <div class="jumbotron ">
   <h2 style="text-align: center">
-    <i class="glyphicon glyphicon-shopping-cart"></i>   
+    <i class="glyphicon glyphicon-shopping-cart"></i>
     Basket
   </h2>
   <ul>
@@ -18,7 +18,12 @@
     </li>
   </ul>
 
-  <button  *ngIf="isEnabled" class="btn btn-info btn-block" (click)="route()">
+  <button *ngIf="isEnabled" class="btn btn-info btn-block" (click)="route()">
     Proceed To Checkout
+    <i class="glyphicon glyphicon-menu-right"></i>
+  </button>
+  <button *ngIf="isEnabled" class="btn btn-danger btn-block" (click)="clearCart()">Clear Cart
+    <span> </span>
+    <i class="glyphicon glyphicon-trash"></i>
   </button>
 </div>

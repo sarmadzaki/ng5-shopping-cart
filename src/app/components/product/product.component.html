@@ -3,15 +3,19 @@
     <div class="col-md-10 col-md-offset-2">
       <form #form="ngForm" class="search-form">
         <div class="form-group has-feedback ">
-          <input autocomplete="off" [(ngModel)]="searchText" (change)="onSearch()" type="text" class="form-control pull-right" name="search" id="search" placeholder="Type Products Name"
-            ngModel>
+          <input autocomplete="off" [(ngModel)]="searchText" (change)="onSearch()" type="text" class="form-control pull-right" name="search"
+            id="search" placeholder="Type Products Name" ngModel>
           <span class="glyphicon glyphicon-search form-control-feedback"></span>
         </div>
       </form>
     </div>
     <div class=" col-md-12  col-md-offset-10">
-      <button class="btn btn-primary" (click)="sorting()"><i class="glyphicon glyphicon-chevron-up"></i></button>
-      <button class="btn" (click)="sorting()"><i class="glyphicon glyphicon-chevron-down"></i></button>
+      <button class="btn btn-primary" (click)="sorting()">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+      </button>
+      <button class="btn" (click)="sorting()">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </button>
     </div>
   </div>
 
@@ -30,6 +34,7 @@
         <button class="btn btn-block btn-primary" (click)="addCart(d.id, d.price)">
           Add To Cart
         </button>
+        <button class="btn btn-block btn-primary" (click)="detailsPage(d.name)">Details</button>
       </div>
     </div>
   </div>

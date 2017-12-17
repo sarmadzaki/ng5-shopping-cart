@@ -10,7 +10,6 @@ export class SidebarComponent implements OnInit {
   totalItems: any = 0;
   totalPrice: any = 0;
   isEnabled: boolean = false;
-  masterName = 1201;
   constructor(public cart: CartService, public router: Router) { }
 
   ngOnInit() {
@@ -22,15 +21,17 @@ export class SidebarComponent implements OnInit {
   }
   route() {
     console.log(this.totalItems, this.totalPrice)
-    this.cart.checkout = {items: this.totalItems, price: this.totalPrice}
+    this.cart.checkout = { items: this.totalItems, price: this.totalPrice }
     this.router.navigate(['/checkout']);
-    
-
   }
 
   proceedToCheckout() {
     if (this.totalItems !== 0) {
       this.isEnabled = true;
     }
+  }
+  clearCart() {
+    this.totalItems = null;
+    this.totalPrice = null;
   }
 }

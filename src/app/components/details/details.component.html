@@ -1,3 +1,41 @@
-<p>
-  details works!
-</p>
+<div>
+  <!-- <div>
+    <div class="col-md-10 col-md-offset-2">
+      <form #form="ngForm" class="search-form">
+        <div class="form-group has-feedback ">
+          <input autocomplete="off" [(ngModel)]="searchText" (change)="onSearch()" type="text" class="form-control pull-right" name="search"
+            id="search" placeholder="Type Products Name" ngModel>
+          <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+    <div class=" col-md-12  col-md-offset-10">
+      <button class="btn btn-primary" (click)="sorting()">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+      </button>
+      <button class="btn" (click)="sorting()">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </button>
+    </div>
+  </div> -->
+
+  <div *ngFor="let d of data">
+    <h4 class="pull-right">
+      <b>
+        Price:
+      </b>
+      {{d.price}}
+    </h4>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" height="150px" src="http://images.car.bauercdn.com/pagefiles/69752/peugeot_instinct_01.jpg" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{d.name}}</h4>
+        <p class="card-text">{{d.description}}</p>
+        <button class="btn btn-block btn-primary" (click)="addCart(d.id, d.price)">
+          Add To Cart
+        </button>
+        <button class="btn btn-block btn-primary" (click)="detailsPage(d.id)">Details</button>
+      </div>
+    </div>
+  </div>
+

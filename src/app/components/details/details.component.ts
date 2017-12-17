@@ -7,17 +7,17 @@ import { ProductService } from '../../services/productService/product.service'
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
- d: any;
-  constructor(private route: ActivatedRoute, public products: ProductService) { 
+  data: any;
+  constructor(public route: ActivatedRoute, public product: ProductService) {
 
   }
 
   ngOnInit() {
-  this.d = this.products.data;
-  this.route.params.subscribe(data => {
-      console.log(data);
-     console.log('something', this.d)
-    })
+    this.route.params.subscribe(data => {
+      this.data = this.product.data.filter(res => {
+        return res.name == data.name;
+      });
+    });
   }
+
 }
- 
