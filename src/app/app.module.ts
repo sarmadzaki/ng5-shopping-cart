@@ -43,7 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FilterPipe,
     RegisterComponent,
     LoginComponent,
-    DetailsComponent,
+    DetailsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

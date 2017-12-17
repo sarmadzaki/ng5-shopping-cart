@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router'
-
+import {HelperService} from '../helpers/helper.service'
 @Injectable()
 export class AuthService {
   userData: any[] = [];
   isValid: boolean = false;
-  constructor(public route: Router) { }
+  constructor(public route: Router,public helper: HelperService) { }
   register(data) {
     console.log('register', data)
     this.userData.push(data);
+    this.helper.setItem('userData', this.userData);
   }
   login(data) {
-    let registeredUser = this.userData.filter((res, i) => {
+    let userData = this.helper.getItem('userData');
+    userData.filter((res, i) => {
       if (data.value.email == res.email) {
         this.isValid = !this.isValid;
       }
@@ -19,7 +21,6 @@ export class AuthService {
         this.isValid = false;
       }
     });[0]
-    console.log(registeredUser, this.isValid);
   }
 
   ValidateEmail(user) {

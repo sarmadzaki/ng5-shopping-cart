@@ -29,7 +29,8 @@ export class ProductComponent implements OnInit {
   sorting() {
     this.isSort = !this.isSort;
   }
-detailsPage(name) {
-  this.route.navigate(['details', name])
-}
+  detailsPage(name) {
+    this.route.navigate(['details', name])
+  }
+  
 }
